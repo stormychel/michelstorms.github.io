@@ -293,6 +293,24 @@
       flex-wrap: wrap;
     }
 
+    .legal-links {
+      margin-top: 12px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+    }
+
+    .legal-links a {
+      color: var(--gray-500);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .legal-links a:hover {
+      color: var(--navy);
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -462,6 +480,11 @@
         <div class="app-actions">
           <a class="btn btn-primary" href="mailto:michelstorms@icloud.com?subject=PickDatePlace%20Open%20Beta">Request TestFlight Access</a>
           <a class="btn btn-outline" href="index.html#contact">Questions or feedback</a>
+        </div>
+        <div class="legal-links" aria-label="PickDatePlace legal links">
+          <a href="https://michelstorms.dev/pickdateplace/terms/">Terms of Service</a>
+          <a href="https://michelstorms.dev/pickdateplace/license/">License Agreement</a>
+          <a href="https://michelstorms.dev/pickdateplace/privacy/">Privacy Policy</a>
         </div>
       </article>
     </section>
