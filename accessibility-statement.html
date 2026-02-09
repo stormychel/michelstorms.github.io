@@ -54,6 +54,11 @@
       font-weight: 500;
       color: var(--gray-500);
     }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
     main {
       max-width: 680px;
@@ -100,7 +105,10 @@
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Michel Storms</a>
-      <a href="index.html" class="nav-back">&larr; Back to Home</a>
+      <div class="nav-actions">
+        <a href="apps.html" class="nav-back">Apps</a>
+        <a href="index.html" class="nav-back">&larr; Back to Home</a>
+      </div>
     </div>
   </nav>
 
