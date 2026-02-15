@@ -1,0 +1,279 @@
+---
+layout: null
+permalink: /blog.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Michel Storms</title>
+  <meta name="description" content="Articles on Apple development, Swift, SwiftUI, and the freelance developer life.">
+  <link rel="canonical" href="https://michelstorms.com/blog.html">
+
+  <link rel="icon" type="image/png" href="assets/logo-og.png">
+  <link rel="apple-touch-icon" href="assets/logo-og.png">
+
+  <meta property="og:title" content="Blog — Michel Storms">
+  <meta property="og:description" content="Articles on Apple development, Swift, SwiftUI, and the freelance developer life.">
+  <meta property="og:url" content="https://michelstorms.com/blog.html">
+  <meta property="og:site_name" content="Michel Storms">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://michelstorms.com/assets/logo-og.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog — Michel Storms">
+  <meta name="twitter:description" content="Articles on Apple development, Swift, SwiftUI, and the freelance developer life.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2d2e3a;
+      --navy-light: #3d3e4e;
+      --navy-dark: #1a1b24;
+      --white: #ffffff;
+      --off-white: #f8f8fa;
+      --gray-100: #f0f0f3;
+      --gray-200: #e2e2e7;
+      --gray-300: #c5c5ca;
+      --gray-400: #8c8c92;
+      --gray-500: #52525a;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--navy);
+      background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 55%, var(--gray-100) 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .blog-hero {
+      padding: 84px 0 42px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .blog-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.3rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .blog-hero p {
+      max-width: 640px;
+      font-size: 1.02rem;
+      color: var(--gray-500);
+    }
+
+    .posts-grid {
+      padding: 16px 0 88px;
+      display: grid;
+      gap: 24px;
+    }
+
+    .post-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .post-card-date {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+    }
+
+    .post-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .post-card-excerpt {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .post-card-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .post-card-link:hover { opacity: 0.8; }
+
+    .no-posts {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--gray-400);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: var(--gray-300);
+      padding: 26px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    .footer-inner a {
+      color: var(--gray-300);
+      transition: color 0.2s;
+    }
+
+    .footer-inner a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .blog-hero { padding-top: 52px; }
+      .post-card { padding: 24px; }
+      .post-card-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Michel Storms</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="accessibility-statement.html">Accessibility</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="blog-hero">
+      <span class="section-label">Blog</span>
+      <h1>Thoughts & articles</h1>
+      <p>Notes on Apple development, Swift, SwiftUI, and lessons from building apps as a freelance developer.</p>
+    </section>
+
+    <section class="posts-grid" aria-label="Blog posts">
+      {% for post in site.posts %}
+      <a href="{{ post.url }}" class="post-card">
+        <p class="post-card-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <h2 class="post-card-title">{{ post.title }}</h2>
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+        <span class="post-card-link">Read more &rarr;</span>
+      </a>
+      {% endfor %}
+
+      {% if site.posts.size == 0 %}
+      <p class="no-posts">No posts yet. Check back soon.</p>
+      {% endif %}
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2021–2026 Michel Storms. All rights reserved.</p>
+      <p><a href="mailto:michelstorms@icloud.com">michelstorms@icloud.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

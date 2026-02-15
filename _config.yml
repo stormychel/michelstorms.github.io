@@ -1,0 +1,12 @@
+title: Michel Storms
+url: https://michelstorms.com
+description: Freelance Apple Developer — custom software solutions, advice, design and programming services for Apple Platforms.
+
+permalink: /blog/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - .claude
